@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
 
 body{
     font-family: 'Titillium Web', sans-serif;
+    background-color: rgb(1, 84, 147);
 }
 
 header{
@@ -38,6 +40,20 @@ main{
     padding-top: 100px;
 }
 
+#home .btn{
+    width: 25%;
+    height: 50px;
+    font-size: x-large;
+    font-weight: bold;
+    box-shadow: 8px 8px 15px 0 rgb(0, 0, 0);
+    transition: 0.3s ease-in-out;
+}
+
+#home .btn:hover{
+    box-shadow: 0 0 20px 2px rgb(1, 150, 213);
+    transition: 0.3s ease-in-out;
+}
+
 .productSwiper{
     height: 300px;
     width: 100%;
@@ -50,4 +66,12 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+footer{
+    height: 200px;
+    background-color: rgb(1, 48, 84);
+}
+
+footer p{
+    font-family: "Playwrite CU", cursive;
 }
