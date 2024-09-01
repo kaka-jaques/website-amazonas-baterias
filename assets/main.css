@@ -12,6 +12,7 @@ header{
     width: 100%;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    z-index: 100;
 }
 
 header #logo{
@@ -40,18 +41,44 @@ main{
     padding-top: 100px;
 }
 
-#home .btn{
+#home .desktop-view .btn{
     width: 25%;
     height: 50px;
     font-size: x-large;
     font-weight: bold;
     box-shadow: 8px 8px 15px 0 rgb(0, 0, 0);
     transition: 0.3s ease-in-out;
+    text-decoration: none;
 }
 
-#home .btn:hover{
+#home .desktop-view .btn:hover{
     box-shadow: 0 0 20px 2px rgb(1, 150, 213);
     transition: 0.3s ease-in-out;
+}
+
+#home .mobile-view .col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home .mobile-view .btn{
+    width: 60%;
+    height: 50px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px 0 rgb(0, 0, 0);
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+#home .mobile-view .btn:hover{
+    box-shadow: 0 0 20px 2px rgb(1, 150, 213);
+    transition: 0.3s ease-in-out;
+}
+
+#home .mobile-view img{
+    width: 100%;
 }
 
 .productSwiper{
@@ -74,4 +101,34 @@ footer{
 
 footer p{
     font-family: "Playwrite CU", cursive;
+}
+
+footer .mobile-view{
+    display: none;
+}
+
+footer .mobile-view img{
+    width: 50%;
+}
+.copyright{
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+@media screen and (max-width: 985px) {
+    .desktop-view{
+        display: none;
+    }
+    .mobile-view{
+        display: flex;
+    }
+    footer{
+        height: 230px;
+    }
+    footer .fcol{
+      display: none;  
+    }
+    footer img{
+        width: 50%;
+    }
 }
