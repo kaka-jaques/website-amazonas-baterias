@@ -23,39 +23,38 @@
 </head>
 
 <body>
-    <header>
-        <div class='row desktop-view'>
+    <header class="desktop-view">
+        <div class='row'>
             <div id='logo' class='col'>
                 <img src='assets/imgs/logo.png'>
             </div>
-            <div class='col'>
+            <div class='col desktop-view'>
                 <a href='#home'>Home</a>
             </div>
-            <div class='col'>
+            <div class='col desktop-view'>
                 <a href=''>Sobre</a>
             </div>
-            <div class='col'>
+            <div class='col desktop-view'>
                 <a href=''>Produtos</a>
             </div>
-            <div class='col'>
+            <div class='col desktop-view'>
                 <a href='#contact'>Contato</a>
             </div>
-            <div class="col mr-5">
+            <div class="col mr-5 desktop-view">
                 <a href="wa.me/5531988468499" class="text-success">
                     <i class="fa-brands fa-whatsapp"></i>
                     Whatsapp
                 </a>
             </div>
         </div>
-        <div class="mobile-view">
-            <div id="mobile-logo">
-                <img src="assets/imgs/logo.png" alt="">
-            </div>
-        </div>
     </header>
     <main>
         <section id='home'>
             <div class='container-fluid bg-warning text-center desktop-view'>
+                <div class="row mb-3">
+                    <img src="assets/imgs/logo.png" alt="">
+                    <h1><b class="text-primary">AMAZONAS</b> <b>BATERIAS</b></h1>
+                </div>
                 <div class="row">
                     <div class="col">
                         <img src="assets/imgs/item-intro.png" alt="">
@@ -73,10 +72,20 @@
                 </div>
             </div>
             <div class="bg-warning mobile-view">
+                <div class="row mb-3 text-center">
+                    <img src="assets/imgs/logo.png" alt="">
+                    <h1><b class="text-primary">AMAZONAS</b> <b>BATERIAS</b></h1>
+                </div>
                 <div class="row">
                     <div class="col">
                         <img src="assets/imgs/item-intro.png" alt="">
-                        <button class="btn btn-primary mb-4 mt-3">
+                        <button class="btn btn-danger mt-3">
+                            <a href="tel:5531988468499" target="_blank" class="text-light">
+                                <i class="fa-solid fa-phone text-light"></i>
+                                DISK EMERGÊNCIA!
+                            </a>
+                        </button>
+                        <button class="btn btn-success mb-4 mt-3">
                             <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
                                 <i class="fa-brands fa-whatsapp text-light"></i>
                                 PEÇA O SEU AGORA!
@@ -96,25 +105,123 @@
                 <div class="swiper productSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            Produto 1
+                            <div class="row">
+                                <img src="assets/imgs/pioneiro-item.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria Pioneiro 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            Produto 2
+                            <div class="row">
+                                <img src="assets/imgs/heliar-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria Heliar 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            Produto 3
+                            <div class="row">
+                                <img src="assets/imgs/moura-item.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria Moura 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            Produto 4
+                            <div class="row">
+                                <img src="assets/imgs/duracell-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria Duracell 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            Produto 5
+                            <div class="row">
+                                <img src="assets/imgs/tudor-item.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria Tudor 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            Produto 6
+                            <div class="row">
+                                <img src="assets/imgs/onbat-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria OnBat 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
-                            Produto 7
+                            <div class="row">
+                                <img src="assets/imgs/baterax-item.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h1><b>R$200,00</b></h1>
+                                <p>Bateria Pioneiro 60Ah</p>
+                                <p>Garantia de 24 meses</p>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-success">
+                                    <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                                        <b>COMPRAR!</b>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <div class="swiper-slide">
                             Produto 8
