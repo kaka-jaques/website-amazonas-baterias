@@ -36,10 +36,16 @@ header .col a{
     color: black;
     font-size: 20px;
     font-weight: 600;
+    transition: 0.3s ease-in-out;
 }
 
 main{
     padding-top: 100px;
+}
+
+header .col a:hover{
+    transition: 0.3s ease-in-out;
+    color: rgb(1, 150, 213);
 }
 
 #home .desktop-view .btn{
@@ -166,6 +172,10 @@ footer{
 
 footer p{
     font-family: "Playwrite CU", cursive;
+}
+
+footer .fcol p{
+    font-family: 'Titillium Web', sans-serif;
 }
 
 footer .mobile-view{
