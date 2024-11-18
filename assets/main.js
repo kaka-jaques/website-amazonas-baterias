@@ -3,11 +3,14 @@ const productSwiper = new Swiper('.productSwiper', {
     spaceBetween: 10,
     loop: true,
     autoplay: {
-        delay: 5000
+        delay: 4000
     },
     breakpoints: {
         1000:{
             slidesPerView: 3,
+            grid:{
+                rows: 2
+            }
         }
     },
     pagination: {

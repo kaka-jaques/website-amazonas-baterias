@@ -73,6 +73,10 @@ header .col a:hover{
     width: 15%;
 }
 
+#home .desktop-view .business-name{
+    font-size: 50px;
+}
+
 #home .mobile-view{
     display: none;
     font-style: italic;
@@ -138,13 +142,26 @@ header .col a:hover{
 }
 
 .productSwiper{
-    height: 450px;
+    height: 600px;
     width: 100%;
+}
+
+.productSwiper .swiper-wrapper{
+    height: 570px;
+}
+
+.productSwiper .swiper-pagination{
+    position: absolute;
+    bottom: 0;
+}
+
+.productSwiper .swiper-pagination-bullet-active{
+    background-color: white;
 }
 
 .productSwiper .swiper-slide{
     text-align: center;
-    font-size: 18px;
+    font-size: 12px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -156,14 +173,17 @@ header .col a:hover{
 .productSwiper .swiper-slide .row{
     justify-content: center;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 .productSwiper .swiper-slide .row p{
     margin-bottom: 0;
 }
 .productSwiper .swiper-slide img{
     width: auto;
-    height: 200px;
+    height: 80px;
+}
+.productSwiper .swiper-slide button{
+    width: 100%;
 }
 footer{
     height: 280px;
