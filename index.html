@@ -107,6 +107,57 @@
         <section id="products" class="mt-5">
             <div class="container text-center">
                 <h1 class="mb-4"><b class="text-light">PRODUTOS</b></h1>
+                <div class="purchase-back-overlay" onclick="closeBuyOverlay()">
+                    <div class="purchase-overlay text-left" onclick="event.stopPropagation()">
+                        <div class="row">
+                            <h2>Produto Selecionado:</h2>
+                        </div>
+                        <div class="row mb-5">
+                            <p id="selected-product"></p>
+                        </div>
+                        <div class="row mb-4">
+                            <button class="btn btn-light mr-4 ml-5 payment" onclick="handlePayment(this)">
+                                <i class="fa-brands fa-pix"></i>
+                                PIX
+                            </button>
+                            <button class="btn btn-light mr-4 payment" onclick="handlePayment(this)">
+                                <i class="fa-regular fa-credit-card"></i>
+                                Crédito ou Débito
+                            </button>
+                            <button class="btn btn-light payment" onclick="handlePayment(this)">
+                                <i class="fa-solid fa-money-bills"></i>
+                                Dinheiro
+                            </button>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Nome completo</span>
+                                </div>
+                                <input type="text" name="name" id="customer-name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Endereço para entrega</span>
+                                </div>
+                                <input type="text" name="address" id="customer-address" class="form-control">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" id="customer-address-checkbox" onchange="handleSendType(this)" required>
+                                         Retirada
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <button class="btn btn-success" onclick="sendPurchase()">
+                                FAZER PEDIDO!
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="swiper productSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -121,7 +172,7 @@
                                 <p><b>Aplicações: </b>Motos</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -138,7 +189,7 @@
                                 <p><b>Aplicações: </b>Motos</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -155,7 +206,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -172,7 +223,7 @@
                                 <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -189,7 +240,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -206,7 +257,7 @@
                                 <p><b>Aplicações: </b>Motos</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -223,7 +274,7 @@
                                 <p><b>Aplicações: </b>Populares</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -240,7 +291,7 @@
                                 <p><b>Aplicações: </b>Populares</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -257,7 +308,7 @@
                                 <p><b>Aplicações: </b>Populares Atuais</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -274,7 +325,7 @@
                                 <p><b>Aplicações: </b>Polo + Lado Direito</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -291,7 +342,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -308,7 +359,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -325,7 +376,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -342,7 +393,7 @@
                                 <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -359,7 +410,7 @@
                                 <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -376,7 +427,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -393,7 +444,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -410,7 +461,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -427,7 +478,7 @@
                                 <p><b>Aplicações: </b>Motos</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -444,7 +495,7 @@
                                 <p><b>Aplicações: </b>Motos</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -461,7 +512,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -478,7 +529,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -495,7 +546,7 @@
                                 <p><b>Aplicações: </b>Motos</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -512,7 +563,7 @@
                                 <p><b>Aplicações: </b>Populares</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -529,7 +580,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -546,7 +597,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -563,7 +614,7 @@
                                 <p><b>Aplicações: </b>Populares</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -580,7 +631,7 @@
                                 <p><b>Aplicações: </b>Carros</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -597,7 +648,7 @@
                                 <p><b>Aplicações: </b>Populares</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -614,7 +665,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -631,7 +682,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -648,7 +699,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -665,7 +716,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -682,7 +733,7 @@
                                 <p><b>Aplicações: </b>Populares</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -699,7 +750,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -716,7 +767,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -733,7 +784,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -750,7 +801,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -767,7 +818,7 @@
                                 <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -784,7 +835,7 @@
                                 <p><b>Aplicações: </b>Ônibus, Caminhões e Vans</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -801,7 +852,7 @@
                                 <p><b>Aplicações: </b>Carros</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
@@ -818,7 +869,7 @@
                                 <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
                             </div>
                             <div class="row">
-                                <button class="btn btn-success">
+                                <button onclick="openBuyOverlay(this.parenteElement)" class="btn btn-success">
                                     <b>COMPRAR!</b>
                                 </button>
                             </div>
