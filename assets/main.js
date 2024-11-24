@@ -95,7 +95,7 @@ function sendPurchase(){
     customer = document.querySelector('#customer-name').value;
     address = document.querySelector('#customer-address').value;
     try{
-        paymentMethod = document.querySelector('.payment-active').textContent.replaceAll(' ', '').replaceAll('\n', '');
+        paymentMethod = document.querySelector('.payment-active').textContent.replace('                                ', '');
     }catch{
         paymentMethod = '';
     }
@@ -108,17 +108,19 @@ function sendPurchase(){
 
     if(new Date().getHours() < 12){
         temporalGreeting = 'Olá! Bom dia!';
-    }else{
+    }else if(new Date().getHours() < 18){
         temporalGreeting = 'Olá! Boa tarde!';
+    }else{
+        temporalGreeting = 'Olá! Boa noite!';
     }
 
     if(document.querySelector('#customer-address-checkbox').checked){
 
-        completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*%0APagamento será por '+paymentMethod+' e irei *RETIRAR* na loja!'
+        completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*%0APagamento será por *'+paymentMethod+'* e irei *RETIRAR* na loja!'
 
     }else{
 
-        completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*.%0APagamento será por '+paymentMethod+' e a entrega no endereço *'+address+'*!'
+        completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*.%0APagamento será por *'+paymentMethod+'* e a entrega no endereço *'+address+'*!'
 
     }
 

@@ -83,7 +83,7 @@
             <div class="bg-warning mobile-view">
                 <div class="row mb-3 text-center">
                     <img src="assets/imgs/logo.png" alt="">
-                    <h1><b class="text-primary">AMAZONAS</b> <b>BATERIAS</b></h1>
+                    <h1><b class="text-primary">AMAZONAS</b><b>BATERIAS</b></h1>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -117,22 +117,16 @@
                         </div>
                         <div class="row mb-4">
                             <button class="btn btn-light mr-4 ml-5 payment" onclick="handlePayment(this)">
-                                <i class="fa-brands fa-pix"></i>
-                                PIX
-                            </button>
+                                <i class="fa-brands fa-pix"></i>PIX</button>
                             <button class="btn btn-light mr-4 payment" onclick="handlePayment(this)">
-                                <i class="fa-regular fa-credit-card"></i>
-                                Crédito ou Débito
-                            </button>
+                                <i class="fa-regular fa-credit-card"></i>Crédito ou Débito</button>
                             <button class="btn btn-light payment" onclick="handlePayment(this)">
-                                <i class="fa-solid fa-money-bills"></i>
-                                Dinheiro
-                            </button>
+                                <i class="fa-solid fa-money-bills"></i>Dinheiro</button>
                         </div>
                         <div class="row mb-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Nome completo</span>
+                                    <span class="input-group-text" id="prepend-customer-name">Nome</span>
                                 </div>
                                 <input type="text" name="name" id="customer-name" class="form-control" required>
                             </div>
@@ -140,7 +134,7 @@
                         <div class="row mb-5">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Endereço para entrega</span>
+                                    <span class="input-group-text">Endereço</span>
                                 </div>
                                 <input type="text" name="address" id="customer-address" class="form-control">
                                 <div class="input-group-append">
@@ -885,7 +879,7 @@
             </div>
         </section>
         <section id="contact" class="mt-5">
-            <div class="container text-center mb-5">
+            <div class="container text-center mb-5 desktop-view">
                 <h1 class="pt-5 mt-5 mb-5 text-light"><b>CONTATO</b></h1>
                 <div class="row">
                     <div class="col">
@@ -913,6 +907,34 @@
                     </div>
                     <div class="col">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3394.0377168046457!2d-44.007191525149274!3d-19.94404273874522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6966bd471985f%3A0x8f824b30fd23f38e!2sAmazonas%20Baterias!5e1!3m2!1spt-BR!2sbr!4v1730220839302!5m2!1spt-BR!2sbr" width="550" height="350" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mb-5 mobile-view">
+                <h1 class="text-light"><b>CONTATO</b></h1>
+                <div class="row">
+                    <div class="col">
+                        <div class="row text-center mb-3">
+                            <h2 class="p-1 mb-0">
+                                <b class="text-primary">AMAZONAS</b><b class="text-light">BATERIAS</b>
+                            </h2>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-location-dot mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="https://www.google.com/maps/place/Amazonas+Baterias/@-19.944048,-44.004617,1559m/data=!3m1!1e3!4m6!3m5!1s0xa6966bd471985f:0x8f824b30fd23f38e!8m2!3d-19.9440478!4d-44.0046166!16s%2Fg%2F1v1kr2k1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Endereço: Av. Amazonas, 8660, Jardinopólis</a>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-phone mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="tel:3133311219" target="_blank">Telefone: (31) 3331-1229</a>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-brands fa-whatsapp mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="https://wa.me/5531990770066" target="_blank">Whatsapp: (31) 99077-0066</a>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-calendar-days mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <p style="padding: 0; color: white; text-decoration: none; width: fit-content;">Segunda a Sexta: 8h às 18h</p>
+                        </div>
                     </div>
                 </div>
             </div>

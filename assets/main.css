@@ -261,7 +261,55 @@ footer .mobile-view img{
         justify-content: center;
     }
     #home .mobile-view .mb-3 img{
-        width: 40%;
+        width: 70%;
+    }
+    .purchase-overlay{
+        width: 80%;
+    }
+    .purchase-overlay .mb-5{
+        margin-bottom: 5px !important;
+    }
+    .purchase-overlay .mb-4{
+        margin-bottom: 10px !important;
+    }
+    .purchase-overlay .mt-5{
+        margin-top: 0 !important;
+    }
+    .purchase-overlay .ml-5{
+        margin-left: 0px !important;
+    }
+    .purchase-overlay .mr-4{
+        margin-right: 0 !important;
+    }
+    .purchase-overlay button.payment{
+        border: 1px solid rgb(167, 167, 167);
+        width: 150px;
+        font-size: 14px;
+    }
+    
+    .purchase-overlay button.payment-active{
+        background-color: rgb(6, 132, 242);
+        transition: 0.3s ease-in-out;
+    }
+    .productSwiper .swiper-wrapper{
+        height: 350px;
+    }
+    .productSwiper .swiper-slide{
+        font-size: 17px;
+    }
+    .productSwiper .swiper-slide img{
+        width: auto;
+        height: 100px;
+    }
+    .productSwiper{
+        height: 400px;
+    }
+    #contact .mobile-view{
+        display: flex;
+        flex-direction: column;
+    }
+    #contact .mobile-view h1{
+        width: 100%;
     }
     footer{
         height: 230px;
