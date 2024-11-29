@@ -23,48 +23,56 @@
 </head>
 
 <body>
-    <header>
-        <div class='row desktop-view'>
+    <header class="desktop-view">
+        <div class='row'>
             <div id='logo' class='col'>
                 <img src='assets/imgs/logo.png'>
             </div>
-            <div class='col'>
+            <div id="nav-option" class='col desktop-view'>
                 <a href='#home'>Home</a>
             </div>
-            <div class='col'>
-                <a href=''>Sobre</a>
+            <div id="nav-option" class='col desktop-view'>
+                <a href='#products'>Produtos</a>
             </div>
-            <div class='col'>
-                <a href=''>Produtos</a>
+            <div id="nav-option" class='col desktop-view'>
+                <a href='#about'>Sobre</a>
             </div>
-            <div class='col'>
+            <div id="nav-option" class='col desktop-view'>
                 <a href='#contact'>Contato</a>
             </div>
-            <div class="col mr-5">
-                <a href="wa.me/5531988468499" class="text-success">
+            <div class="col mr-5 desktop-view">
+                <a href="wa.me/5531990770066" class="text-success">
                     <i class="fa-brands fa-whatsapp"></i>
                     Whatsapp
                 </a>
-            </div>
-        </div>
-        <div class="mobile-view">
-            <div id="mobile-logo">
-                <img src="assets/imgs/logo.png" alt="">
             </div>
         </div>
     </header>
     <main>
         <section id='home'>
             <div class='container-fluid bg-warning text-center desktop-view'>
+                <div class="row mb-3">
+                    <h1 class="mt-4 business-name"><b class="text-primary">AMAZONAS</b><b>BATERIAS</b></h1>
+                </div>
                 <div class="row">
+                    <div class="col d-flex align-items-start" id="payment">
+                        <h1>
+                            <b>ATÉ 10x SEM JUROS!</b>
+                        </h1>
+                    </div>
                     <div class="col">
                         <img src="assets/imgs/item-intro.png" alt="">
+                    </div>
+                    <div class="col d-flex align-items-end" id="send">
+                        <h1>
+                            <b>ENTREGA E INSTALAÇÃO EM ATÉ 1 HORA!</b>
+                        </h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <button class="btn btn-primary mb-5">
-                            <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                            <a href="https://wa.me/5531990770066" target="_blank" class="text-light">
                                 <i class="fa-brands fa-whatsapp text-light"></i>
                                 PEÇA O SEU AGORA!
                             </a>
@@ -73,11 +81,21 @@
                 </div>
             </div>
             <div class="bg-warning mobile-view">
+                <div class="row mb-3 text-center">
+                    <img src="assets/imgs/logo.png" alt="">
+                    <h1><b class="text-primary">AMAZONAS</b><b>BATERIAS</b></h1>
+                </div>
                 <div class="row">
                     <div class="col">
                         <img src="assets/imgs/item-intro.png" alt="">
-                        <button class="btn btn-primary mb-4 mt-3">
-                            <a href="https://wa.me/5531988468499" target="_blank" class="text-light">
+                        <button class="btn btn-danger mt-3">
+                            <a href="tel:3133311219" target="_blank" class="text-light">
+                                <i class="fa-solid fa-phone text-light"></i>
+                                DISK EMERGÊNCIA!
+                            </a>
+                        </button>
+                        <button class="btn btn-success mb-4 mt-3">
+                            <a href="https://wa.me/5531990770066" target="_blank" class="text-light">
                                 <i class="fa-brands fa-whatsapp text-light"></i>
                                 PEÇA O SEU AGORA!
                             </a>
@@ -86,46 +104,839 @@
                 </div>
             </div>
         </section>
-        <section id='about'>
-            <div class='container'>
-
-            </div>
-        </section>
         <section id="products" class="mt-5">
-            <div class="container">
-                <div class="swiper productSwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            Produto 1
+            <div class="container text-center">
+                <h1 class="mb-4"><b class="text-light">PRODUTOS</b></h1>
+                <div class="purchase-back-overlay" onclick="closeBuyOverlay()">
+                    <div class="purchase-overlay text-left" onclick="event.stopPropagation()">
+                        <div class="row">
+                            <h2>Produto Selecionado:</h2>
                         </div>
-                        <div class="swiper-slide">
-                            Produto 2
+                        <div class="row mb-5">
+                            <p id="selected-product"></p>
                         </div>
-                        <div class="swiper-slide">
-                            Produto 3
+                        <div class="row mb-4">
+                            <button class="btn btn-light mr-4 ml-5 payment" onclick="handlePayment(this)">
+                                <i class="fa-brands fa-pix"></i>PIX</button>
+                            <button class="btn btn-light mr-4 payment" onclick="handlePayment(this)">
+                                <i class="fa-regular fa-credit-card"></i>Crédito ou Débito</button>
+                            <button class="btn btn-light payment" onclick="handlePayment(this)">
+                                <i class="fa-solid fa-money-bills"></i>Dinheiro</button>
                         </div>
-                        <div class="swiper-slide">
-                            Produto 4
+                        <div class="row mb-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="prepend-customer-name">Nome</span>
+                                </div>
+                                <input type="text" name="name" id="customer-name" class="form-control" required>
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            Produto 5
+                        <div class="row mb-5">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Endereço</span>
+                                </div>
+                                <input type="text" name="address" id="customer-address" class="form-control">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" id="customer-address-checkbox" onchange="handleSendType(this)" required>
+                                         Retirada
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            Produto 6
-                        </div>
-                        <div class="swiper-slide">
-                            Produto 7
-                        </div>
-                        <div class="swiper-slide">
-                            Produto 8
+                        <div class="row mt-5">
+                            <button class="btn btn-success" onclick="sendPurchase()">
+                                FAZER PEDIDO!
+                            </button>
                         </div>
                     </div>
                 </div>
+                <div class="swiper productSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/tudor-TX5L.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$160,00</b></h3>
+                                <p>Bateria Tudor</p>
+                                <p><b>Corrente: </b>5Ah</p>
+                                <p><b>Código: </b>TX5L</p>
+                                <p><b>Aplicações: </b>Motos</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/tudor-TX7L.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$190,00</b></h3>
+                                <p>Bateria Tudor</p>
+                                <p><b>Corrente: </b>7Ah</p>
+                                <p><b>Código: </b>TX7L</p>
+                                <p><b>Aplicações: </b>Motos</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/tudor-TFS60PVD.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$390,00</b></h3>
+                                <p>Bateria Tudor</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>TFS60PVD</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/tudor-TFS7PSD.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$590,00</b></h3>
+                                <p>Bateria Tudor</p>
+                                <p><b>Corrente: </b>70Ah</p>
+                                <p><b>Código: </b>TFS7PSD</p>
+                                <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/tudor-TFS90DCD.jpg" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$699,00</b></h3>
+                                <p>Bateria Tudor</p>
+                                <p><b>Corrente: </b>90Ah</p>
+                                <p><b>Código: </b>TFS90DCD</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-MA6-D.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$210,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>6Ah</p>
+                                <p><b>Código: </b>MA6-D</p>
+                                <p><b>Aplicações: </b>Motos</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M40SD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$470,00</b></h3>
+                                <p>Bateria Moura (Caixa Alta)</p>
+                                <p><b>Corrente: </b>40Ah</p>
+                                <p><b>Código: </b>M40SD</p>
+                                <p><b>Aplicações: </b>Populares</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M48FD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$430,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>48Ah</p>
+                                <p><b>Código: </b>M48FD</p>
+                                <p><b>Aplicações: </b>Populares</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M50ED.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$490,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>50Ah</p>
+                                <p><b>Código: </b>M50ED</p>
+                                <p><b>Aplicações: </b>Populares Atuais</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M50JD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$530,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>50Ah</p>
+                                <p><b>Código: </b>M50JD</p>
+                                <p><b>Aplicações: </b>Polo + Lado Direito</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M60AD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$460,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>M60AD</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M60GD.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$460,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>M60GD</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-MF60AD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$840,00</b></h3>
+                                <p>Bateria Moura (Start/Stop)</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>MF60AD</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M70KD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$770,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>70Ah</p>
+                                <p><b>Código: </b>M70KD</p>
+                                <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M75LD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$770,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>75Ah</p>
+                                <p><b>Código: </b>M75LD</p>
+                                <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M90TD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$910,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>90Ah</p>
+                                <p><b>Código: </b>M90TD</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M95QD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$900,00</b></h3>
+                                <p>Bateria Moura</p>
+                                <p><b>Corrente: </b>95Ah</p>
+                                <p><b>Código: </b>M95QD</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/moura-M100HE.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$940,00</b></h3>
+                                <p>Bateria Moura (Caixa Alta)</p>
+                                <p><b>Corrente: </b>100Ah</p>
+                                <p><b>Código: </b>M100HE</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/pioneiro-MBR6BS.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$160,00</b></h3>
+                                <p>Bateria Pioneiro</p>
+                                <p><b>Corrente: </b>6Ah</p>
+                                <p><b>Código: </b>MBR6BS</p>
+                                <p><b>Aplicações: </b>Motos</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/pioneiro-MBR7BS.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$190,00</b></h3>
+                                <p>Bateria Pioneiro</p>
+                                <p><b>Corrente: </b>7Ah</p>
+                                <p><b>Código: </b>MBR7BS</p>
+                                <p><b>Aplicações: </b>Motos</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/pioneiro-F60DG.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$405,00</b></h3>
+                                <p>Bateria Pioneiro (24m de Garantia!)</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>F60DG</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/pioneiro-F60SD.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$330,00</b></h3>
+                                <p>Bateria Pioneiro</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>F60SD</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/pioneiro-MBR6BS.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$160,00</b></h3>
+                                <p>Bateria Pioneiro</p>
+                                <p><b>Corrente: </b>6Ah</p>
+                                <p><b>Código: </b>MBR6BS</p>
+                                <p><b>Aplicações: </b>Motos</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/onbat-F45DN.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$270,00</b></h3>
+                                <p>Bateria OnBat</p>
+                                <p><b>Corrente: </b>45Ah</p>
+                                <p><b>Código: </b>F45DN</p>
+                                <p><b>Aplicações: </b>Populares</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/onbat-F60DN.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$290,00</b></h3>
+                                <p>Bateria OnBat</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>F60DN</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/onbat-D150DN.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$670,00</b></h3>
+                                <p>Bateria OnBat</p>
+                                <p><b>Corrente: </b>150Ah</p>
+                                <p><b>Código: </b>D150DN</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-VL45D.jpg" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$240,00</b></h3>
+                                <p>Bateria Velox</p>
+                                <p><b>Corrente: </b>45Ah</p>
+                                <p><b>Código: </b>VL45D</p>
+                                <p><b>Aplicações: </b>Populares</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$250,00</b></h3>
+                                <p>Bateria Velox</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>VL60D</p>
+                                <p><b>Aplicações: </b>Carros</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$330,00</b></h3>
+                                <p>Bateria Velox (Caixa Alta)</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>VL60D</p>
+                                <p><b>Aplicações: </b>Populares</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$530,00</b></h3>
+                                <p>Bateria Velox</p>
+                                <p><b>Corrente: </b>90Ah</p>
+                                <p><b>Código: </b>VL90D</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$530,00</b></h3>
+                                <p>Bateria Velox</p>
+                                <p><b>Corrente: </b>100Ah</p>
+                                <p><b>Código: </b>VL100E</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$670,00</b></h3>
+                                <p>Bateria Velox</p>
+                                <p><b>Corrente: </b>150Ah</p>
+                                <p><b>Código: </b>VL150D</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/velox-item.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$790,00</b></h3>
+                                <p>Bateria Velox</p>
+                                <p><b>Corrente: </b>180Ah</p>
+                                <p><b>Código: </b>VL180</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões, Vans</b></p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/zetta-Z50D.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$370,00</b></h3>
+                                <p>Bateria Zetta</p>
+                                <p><b>Corrente: </b>50Ah</p>
+                                <p><b>Código: </b>Z50D</p>
+                                <p><b>Aplicações: </b>Populares</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/zetta-Z60D.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$360,00</b></h3>
+                                <p>Bateria Zetta</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>Z60D</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/baterax-BEFP60D.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$280,00</b></h3>
+                                <p>Bateria Baterax</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>BEFP60D</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/bosch-S5X60D.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$426,00</b></h3>
+                                <p>Bateria Bosch</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>S5X60D</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/bosch-S6XE60D.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$780,00</b></h3>
+                                <p>Bateria Bosch (Start/Stop)</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>S6XE60D</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/bosch-S6X75DH.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$690,00</b></h3>
+                                <p>Bateria Bosch</p>
+                                <p><b>Corrente: </b>75Ah</p>
+                                <p><b>Código: </b>S6X75DH</p>
+                                <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/bosch-S6X95DH.webp" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$870,00</b></h3>
+                                <p>Bateria Bosch</p>
+                                <p><b>Corrente: </b>95Ah</p>
+                                <p><b>Código: </b>S6X95DH</p>
+                                <p><b>Aplicações: </b>Ônibus, Caminhões e Vans</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/econ-EFB60HD.png" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$550,00</b></h3>
+                                <p>Bateria eCon (Start/Stop)</p>
+                                <p><b>Corrente: </b>60Ah</p>
+                                <p><b>Código: </b>EFB60HD</p>
+                                <p><b>Aplicações: </b>Carros</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parentElement.parentElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <img src="assets/imgs/econ-EFB72PD.jpg" alt="">
+                            </div>
+                            <div class="row text-left">
+                                <h3><b>R$690,00</b></h3>
+                                <p>Bateria eCon (Start/Stop)</p>
+                                <p><b>Corrente: </b>72Ah</p>
+                                <p><b>Código: </b>EFB72PD</p>
+                                <p><b>Aplicações: </b>Esportivos, Caminhonetes</p>
+                            </div>
+                            <div class="row">
+                                <button onclick="openBuyOverlay(this.parenteElement)" class="btn btn-success">
+                                    <b>COMPRAR!</b>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </section>
-        <section id="contact">
-            <div class="container">
-
+        <section id='about'>
+            <div class='container text-center'>
+                <h1 class="pt-5 mt-5 mb-5 text-light"><b>QUEM SOMOS</b></h1>
+            </div>
+        </section>
+        <section id="contact" class="mt-5">
+            <div class="container text-center mb-5 desktop-view">
+                <h1 class="pt-5 mt-5 mb-5 text-light"><b>CONTATO</b></h1>
+                <div class="row">
+                    <div class="col">
+                        <div class="row text-left mb-3" style="border-bottom: 1.5px solid black; width: fit-content;">
+                            <h2 class="p-1 mb-0">
+                                <b class="text-primary">AMAZONAS</b><b class="text-light">BATERIAS</b>
+                            </h2>
+                        </div>
+                        <div class="row text-left mb-2">
+                            <i class="fa-solid fa-location-dot mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="https://www.google.com/maps/place/Amazonas+Baterias/@-19.944048,-44.004617,1559m/data=!3m1!1e3!4m6!3m5!1s0xa6966bd471985f:0x8f824b30fd23f38e!8m2!3d-19.9440478!4d-44.0046166!16s%2Fg%2F1v1kr2k1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Endereço: Av. Amazonas, 8660, Jardinopólis - Belo Horizonte/MG</a>
+                        </div>
+                        <div class="row text-left mb-2">
+                            <i class="fa-solid fa-phone mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="tel:3133311219" target="_blank">Telefone: (31) 3331-1229</a>
+                        </div>
+                        <div class="row text-left mb-2">
+                            <i class="fa-solid fa-brands fa-whatsapp mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="https://wa.me/5531990770066" target="_blank">Whatsapp: (31) 99077-0066</a>
+                        </div>
+                        <div class="row text-left mb-2">
+                            <i class="fa-solid fa-calendar-days mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <p style="padding: 0; color: white; text-decoration: none; width: fit-content;">Segunda a Sexta: 8h às 18h</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3394.0377168046457!2d-44.007191525149274!3d-19.94404273874522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6966bd471985f%3A0x8f824b30fd23f38e!2sAmazonas%20Baterias!5e1!3m2!1spt-BR!2sbr!4v1730220839302!5m2!1spt-BR!2sbr" width="550" height="350" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mb-5 mobile-view">
+                <h1 class="text-light"><b>CONTATO</b></h1>
+                <div class="row">
+                    <div class="col">
+                        <div class="row text-center mb-3">
+                            <h2 class="p-1 mb-0">
+                                <b class="text-primary">AMAZONAS</b><b class="text-light">BATERIAS</b>
+                            </h2>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-location-dot mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="https://www.google.com/maps/place/Amazonas+Baterias/@-19.944048,-44.004617,1559m/data=!3m1!1e3!4m6!3m5!1s0xa6966bd471985f:0x8f824b30fd23f38e!8m2!3d-19.9440478!4d-44.0046166!16s%2Fg%2F1v1kr2k1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Endereço: Av. Amazonas, 8660, Jardinopólis</a>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-phone mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="tel:3133311219" target="_blank">Telefone: (31) 3331-1229</a>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-brands fa-whatsapp mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <a style="padding: 0; color: white; text-decoration: none; width: fit-content;" href="https://wa.me/5531990770066" target="_blank">Whatsapp: (31) 99077-0066</a>
+                        </div>
+                        <div class="row pl-3 text-left mb-2">
+                            <i class="fa-solid fa-calendar-days mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                            <p style="padding: 0; color: white; text-decoration: none; width: fit-content;">Segunda a Sexta: 8h às 18h</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -138,8 +949,8 @@
                     </a>
                     <p class="text-light mb-0">Uma empresa pertecente a:</p>
                 </div>
-                <div class="col fcol">
-
+                <div class="col fcol text-left text-light">
+                    <p>CNPJ: 51.931.792/0001-59</p>
                 </div>
                 <div class="col fcol">
 
@@ -147,7 +958,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col text-center">
-                    <p class="text-light copyright">© 2024 Rota66. Todos os direitos reservados | Made by <a href="https://kaka-jaques.github.io" target="_blank">Kalil J. Fakhouri</a></p>
+                    <p class="text-light copyright">© 2024 Rota66 & Amazonas Baterias. Todos os direitos reservados | Made by <a href="https://kaka-jaques.github.io" target="_blank">Kalil J. Fakhouri</a></p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body{
     font-family: 'Titillium Web', sans-serif;
@@ -35,10 +36,16 @@ header .col a{
     color: black;
     font-size: 20px;
     font-weight: 600;
+    transition: 0.3s ease-in-out;
 }
 
 main{
     padding-top: 100px;
+}
+
+header .col a:hover{
+    transition: 0.3s ease-in-out;
+    color: rgb(1, 150, 213);
 }
 
 #home .desktop-view .btn{
@@ -55,7 +62,32 @@ main{
     box-shadow: 0 0 20px 2px rgb(1, 150, 213);
     transition: 0.3s ease-in-out;
 }
+#home .desktop-view .mb-3{
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    font-weight: 900;
+}
+#home .desktop-view .mb-3 img{
+    width: 15%;
+}
 
+#home .desktop-view .business-name{
+    font-size: 50px;
+}
+
+#home .mobile-view{
+    display: none;
+    font-style: italic;
+    font-weight: 900;
+}
+#home .mobile-view h1{
+    padding: 0;
+}
+#home .mobile-view .row{
+    width: 100%;
+}
 #home .mobile-view .col{
     display: flex;
     flex-direction: column;
@@ -78,29 +110,124 @@ main{
 }
 
 #home .mobile-view img{
+    width: 90%;
+}
+
+#send::before{
+    content: '';
+    position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+    background-image: url(imgs/caminhao-de-entrega-ezgif.com-effects.gif);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: 70px 75px;
+}
+
+#payment::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(imgs/forma-de-pagamento-ezgif.com-effects.gif);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50px 115px;
+    z-index: 0;
+}
+
+.purchase-back-overlay{
+    position: fixed;
+    display: none;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.522);
+}
+
+.purchase-overlay{
+    width: 50%;
+    height: 70%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.purchase-overlay button.payment{
+    border: 1px solid rgb(167, 167, 167);
+    width: 200px;
+}
+
+.purchase-overlay button.payment-active{
+    background-color: rgb(6, 132, 242);
+    transition: 0.3s ease-in-out;
 }
 
 .productSwiper{
-    height: 300px;
+    height: 600px;
     width: 100%;
+}
+
+.productSwiper .swiper-wrapper{
+    height: 570px;
+}
+
+.productSwiper .swiper-pagination{
+    position: absolute;
+    bottom: 0;
+}
+
+.productSwiper .swiper-pagination-bullet-active{
+    background-color: white;
 }
 
 .productSwiper .swiper-slide{
     text-align: center;
-    font-size: 18px;
-    background: #848484;
+    font-size: 12px;
+    background: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    border-radius: 15px;
+    padding: 20px;
+}
+.productSwiper .swiper-slide .row{
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.productSwiper .swiper-slide .row p{
+    margin-bottom: 0;
+}
+.productSwiper .swiper-slide img{
+    width: auto;
+    height: 80px;
+}
+.productSwiper .swiper-slide button{
+    width: 100%;
 }
 footer{
-    height: 200px;
+    height: 280px;
     background-color: rgb(1, 48, 84);
 }
 
 footer p{
     font-family: "Playwrite CU", cursive;
+}
+
+footer .fcol p{
+    font-family: 'Titillium Web', sans-serif;
 }
 
 footer .mobile-view{
@@ -121,6 +248,68 @@ footer .mobile-view img{
     }
     .mobile-view{
         display: flex;
+    }
+    main{
+        padding-top: 0;
+    }
+    #home .mobile-view{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #home .mobile-view .mb-3{
+        justify-content: center;
+    }
+    #home .mobile-view .mb-3 img{
+        width: 70%;
+    }
+    .purchase-overlay{
+        width: 80%;
+    }
+    .purchase-overlay .mb-5{
+        margin-bottom: 5px !important;
+    }
+    .purchase-overlay .mb-4{
+        margin-bottom: 10px !important;
+    }
+    .purchase-overlay .mt-5{
+        margin-top: 0 !important;
+    }
+    .purchase-overlay .ml-5{
+        margin-left: 0px !important;
+    }
+    .purchase-overlay .mr-4{
+        margin-right: 0 !important;
+    }
+    .purchase-overlay button.payment{
+        border: 1px solid rgb(167, 167, 167);
+        width: 150px;
+        font-size: 14px;
+    }
+    
+    .purchase-overlay button.payment-active{
+        background-color: rgb(6, 132, 242);
+        transition: 0.3s ease-in-out;
+    }
+    .productSwiper .swiper-wrapper{
+        height: 350px;
+    }
+    .productSwiper .swiper-slide{
+        font-size: 17px;
+    }
+    .productSwiper .swiper-slide img{
+        width: auto;
+        height: 100px;
+    }
+    .productSwiper{
+        height: 400px;
+    }
+    #contact .mobile-view{
+        display: flex;
+        flex-direction: column;
+    }
+    #contact .mobile-view h1{
+        width: 100%;
     }
     footer{
         height: 230px;
