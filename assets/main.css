@@ -110,7 +110,7 @@ header .col a:hover{
 }
 
 #home .mobile-view img{
-    width: 90%;
+    width: 100%;
 }
 
 #send::before{
@@ -231,6 +231,10 @@ footer .fcol p{
 }
 
 footer .mobile-view{
+    display: none;
+}
+
+#contact .mobile-view{
     display: none;
 }
 
