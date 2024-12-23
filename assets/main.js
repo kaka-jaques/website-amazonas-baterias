@@ -32,6 +32,8 @@ var paymentMethod;
 
 function openBuyOverlay(el){
 
+    gtag_report_conversion();
+
     let productData = el.querySelector('.text-left').getElementsByTagName('p');
 
     product = productData[0].textContent + ' ' + productData[1].textContent.replace('Corrente: ', '') + ' ' + productData[2].textContent.replace('Código: ', '');
