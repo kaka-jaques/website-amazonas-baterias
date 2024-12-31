@@ -38,20 +38,18 @@ function openBuyOverlay(el){
 
     product = productData[0].textContent + ' ' + productData[1].textContent.replace('Corrente: ', '') + ' ' + productData[2].textContent.replace('Código: ', '');
 
-    price = el.querySelector('.text-left').querySelector('h3').textContent
-
-    document.querySelector('#selected-product').textContent = '1x ' + product + ' - ' + price;
+    document.querySelector('#selected-product').textContent = '1x ' + product;
     
-    gsap.to('.purchase-back-overlay', {
-        display: 'flex',
-        duration: 0,
-        onComplete: () => {
-            gsap.to('.purchase-back-overlay', {
-                opacity: 1,
-                duration: 0.4
-            })
-        }
-    })
+    // gsap.to('.purchase-back-overlay', {
+    //     display: 'flex',
+    //     duration: 0,
+    //     onComplete: () => {
+    //         gsap.to('.purchase-back-overlay', {
+    //             opacity: 1,
+    //             duration: 0.4
+    //         })
+    //     }
+    // })
 }
 
 function closeBuyOverlay(){
@@ -94,19 +92,19 @@ function sendPurchase(){
 
     let temporalGreeting;
 
-    customer = document.querySelector('#customer-name').value;
-    address = document.querySelector('#customer-address').value;
-    try{
-        paymentMethod = document.querySelector('.payment-active').textContent.replace('                                ', '');
-    }catch{
-        paymentMethod = '';
-    }
+    // customer = document.querySelector('#customer-name').value;
+    // address = document.querySelector('#customer-address').value;
+    // try{
+    //     paymentMethod = document.querySelector('.payment-active').textContent.replace('                                ', '');
+    // }catch{
+    //     paymentMethod = '';
+    // }
     
 
-    if(customer == '' || (address == '' && !document.querySelector('#customer-address-checkbox').checked) || paymentMethod == ''){
-        alert('Preencha todos os campos!');
-        return
-    }
+    // if(customer == '' || (address == '' && !document.querySelector('#customer-address-checkbox').checked) || paymentMethod == ''){
+    //     alert('Preencha todos os campos!');
+    //     return
+    // }
 
     if(new Date().getHours() < 12){
         temporalGreeting = 'Olá! Bom dia!';
@@ -116,18 +114,20 @@ function sendPurchase(){
         temporalGreeting = 'Olá! Boa noite!';
     }
 
-    if(document.querySelector('#customer-address-checkbox').checked){
+    completeQueue = temporalGreeting+'%0AGostaria de saber o valor e comprar *'+product+'*!'
 
-        completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*%0APagamento será por *'+paymentMethod+'* e irei *RETIRAR* na loja!'
+    // if(document.querySelector('#customer-address-checkbox').checked){
 
-    }else{
+    //     completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*%0APagamento será por *'+paymentMethod+'* e irei *RETIRAR* na loja!'
 
-        completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*.%0APagamento será por *'+paymentMethod+'* e a entrega no endereço *'+address+'*!'
+    // }else{
 
-    }
+    //     completeQueue = temporalGreeting+'%0AMe chamo *'+customer+'* e gostaria de comprar *'+product+'*.%0APagamento será por *'+paymentMethod+'* e a entrega no endereço *'+address+'*!'
 
-    closeBuyOverlay();
+    // }
 
-    window.open('https://api.whatsapp.com/send?phone=5531990770066&text='+completeQueue, '_blank');
+    // closeBuyOverlay();
+
+    window.open('https://api.whatsapp.com/send?phone=5531990770066&text='+completeQueue);
 
 }
