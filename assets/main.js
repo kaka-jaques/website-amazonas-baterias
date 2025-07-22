@@ -36,9 +36,11 @@ function openBuyOverlay(el){
 
     let productData = el.querySelector('.text-left').getElementsByTagName('p');
 
-    product = productData[0].textContent + ' ' + productData[1].textContent.replace('Corrente: ', '') + ' ' + productData[2].textContent.replace('Código: ', '');
+    product = el.querySelector('h3').textContent + ' ' + productData[0].textContent.replace('Corrente: ', '') + ' ' + productData[1].textContent.replace('Código: ', '');
 
-    document.querySelector('#selected-product').textContent = '1x ' + product;
+    sendPurchase();
+
+    //document.querySelector('#selected-product').textContent = '1x ' + product;
     
     // gsap.to('.purchase-back-overlay', {
     //     display: 'flex',
