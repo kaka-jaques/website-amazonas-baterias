@@ -38,6 +38,23 @@
             return false;
         }
     </script>
+    <script>
+        function gtag_report_conversion2(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-941927491/MIzGCOC9yq4bEMPYksED',
+                'value': 1.0,
+                'currency': 'BRL',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
 
     <!-- Bootstrap Select-->
     <link rel='stylesheet'
@@ -50,8 +67,9 @@
     <header class="desktop-view">
         <div class="row bg-dark text-light">
             <div class="col">
-                <i class="fa-solid fa-phone mr-2" style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
-                    (31) 3331-1219
+                <i class="fa-solid fa-phone mr-2"
+                    style="color: white; width: fit-content; padding: 0; height: 20px;"></i>
+                (31) 3331-1219
             </div>
             <div class="col">
                 <i class="fa-solid fa-location-dot mr-2"
@@ -123,7 +141,7 @@
                 <div class="row">
                     <div class="col">
                         <img src="assets/imgs/item-intro.png" alt="">
-                        <button class="btn btn-danger mt-3" onclick="gtag_report_conversion()">
+                        <button class="btn btn-danger mt-3" onclick="gtag_report_conversion2()">
                             <a href="tel:3133311219" target="_blank" class="text-light">
                                 <i class="fa-solid fa-phone text-light"></i>
                                 DISK EMERGÊNCIA!
